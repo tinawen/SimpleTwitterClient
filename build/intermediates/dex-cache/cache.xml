@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/ActiveAndroid-3.1-adcddac4c58-c4a0f32cc061fdff04790525ddde1d64cfb00a37.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/ActiveAndroid-3.1-adcddac4c58.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="e550c03ed8bcfe3b9f97d8c5ce6e8ee305f3beed"/>
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/universal-image-loader-1.8.4-4f9d006b9fe6f963daa729576d906994813ddc7d.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/universal-image-loader-1.8.4.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="eee81e43531ce82db1781c5a8b27781ca384eede"/>
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/codepath-oauth-0.3.0-42b529cc7e7a6c0f14134e9c9088f516bb65bee1.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/codepath-oauth-0.3.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b90f1c3541987f690e2fb854775914cc23266250"/>
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/android-async-http-1.4.3-b782cd35b3a4fba239259145096f5e97dc2e5d86.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/android-async-http-1.4.3.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="f70e680861fdf9449819003e7799a4e9aca047f8"/>
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/scribe-codepath-fe5dc6f259bb02eaae8e71d275f7c30de95dc2b3.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/scribe-codepath.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="6e0748acc9e7be0695de0d38016d260df52d9167"/>
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/android-support-v4-8189869cdc5776067d69c709ed2d94b058560b57.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/android-support-v4.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="bd6479f5dd592790607e0504e66e0f31c2b4d308"/>
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/codepath-utils-2d6fffc78ac5d3dddbf625a1b59fa6a3ccda7769.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/codepath-utils.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="10901a5ef726eacf1b2443b7f38dc4cc9cd3f7d4"/>
+
+</pre-dex-items>
