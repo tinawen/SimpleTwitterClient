@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- From: file:/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/values/styles.xml -->
+    <eat-comment />
+
+    <color name="screen_name_color">#A8A8A8</color>
     <!-- From: file:/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/values/dimens.xml -->
     <eat-comment />
 
@@ -17,6 +21,7 @@
     <string name="title_activity_timeline">TimelineActivity</string>
     <string name="tweet_body_label">This is the tweet</string>
     <string name="user_name_label">Name</string>
+    <string name="user_screen_name_label">Screen Name</string>
     <!-- From: file:/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/values/styles.xml -->
     <eat-comment />
 

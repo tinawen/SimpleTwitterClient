@@ -26,17 +26,25 @@ public class TimelineActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
         client = TwitterApplication.getRestClient();
-        populateTimeline();
+        populateTimeline(Long.MAX_VALUE);
         lvTweets = (ListView) findViewById(R.id.lvTweets);
+        lvTweets.setOnScrollListener(new EndlessScrollListener() {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount) {
+                long lastTweetId = tweets.get(totalItemsCount - 1).getTid();
+                populateTimeline(lastTweetId);
+            }
+        });
         tweets = new ArrayList<Tweet>();
         aTweets = new TweetArrayAdapter(this, tweets);
         lvTweets.setAdapter(aTweets);
     }
 
-    public void populateTimeline() {
-        client.getHomeTimeline(new JsonHttpResponseHandler() {
+    public void populateTimeline(long max_id) {
+        client.getHomeTimeline(max_id, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONArray jsonArray) {
+                Log.d("debug", "jSON came back");
                 aTweets.addAll(Tweet.fromJSONArray(jsonArray));
             }
 

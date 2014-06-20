@@ -18,31 +18,44 @@ import java.util.List;
  * Created by tina on 6/19/14.
  */
 public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
-        public TweetArrayAdapter(Context context, List<Tweet> tweets) {
-            super(context, 0, tweets);
-        }
+    private static class ViewHolder {
+        ImageView profileImage;
+        TextView username;
+        TextView screenName;
+        TextView body;
+        TextView timeStamp;
+    }
+
+    public TweetArrayAdapter(Context context, List<Tweet> tweets) {
+        super(context, 0, tweets);
+    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Tweet tweet = getItem(position);
 
-        View v;
+        ViewHolder viewHolder;
         if (convertView == null) {
+            viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            v = inflater.inflate(R.layout.tweet_item, parent, false);
+            convertView = inflater.inflate(R.layout.tweet_item, parent, false);
+            viewHolder.profileImage = (ImageView) convertView.findViewById(R.id.ivProfileImge);
+            viewHolder.username = (TextView) convertView.findViewById(R.id.tvUserName);
+            viewHolder.screenName = (TextView) convertView.findViewById(R.id.tvScreenName);
+            viewHolder.body = (TextView) convertView.findViewById(R.id.tvBody);
+            viewHolder.timeStamp = (TextView) convertView.findViewById(R.id.tvTimeStamp);
+            convertView.setTag(viewHolder);
         } else {
-            v = convertView;
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        // find the views within template
-        ImageView ivProfileImage = (ImageView) v.findViewById(R.id.ivProfileImge);
-        TextView tvUsername = (TextView) v.findViewById(R.id.tvUserName);
-        TextView tvBody = (TextView) v.findViewById(R.id.tvBody);
-        ivProfileImage.setImageResource(Color.TRANSPARENT);
+        viewHolder.profileImage.setImageResource(Color.TRANSPARENT);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), ivProfileImage);
-        tvUsername.setText(tweet.getUser().getScreenName());
-        tvBody.setText(tweet.getBody());
-        return v;
+        imageLoader.displayImage(tweet.getUser().getProfileImageUrl(), viewHolder.profileImage);
+        viewHolder.username.setText(tweet.getUser().getName());
+        viewHolder.screenName.setText("@" + tweet.getUser().getScreenName());
+        viewHolder.body.setText(tweet.getBody());
+        viewHolder.timeStamp.setText(tweet.getCreatedAt());
+        return convertView;
     }
  }
