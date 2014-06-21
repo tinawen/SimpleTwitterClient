@@ -32,11 +32,23 @@
         revision="19.1.0"
         sha1="6e0748acc9e7be0695de0d38016d260df52d9167"/>
     <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/classes-f4361dc86f84f47a014ffd130144b759511f38e6.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/exploded-aar/com.github.castorflex.smoothprogressbar/library/0.4.0/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="6ca319f998430aa20c4dde97ba6df213d6cf3dd0"/>
+    <item
         dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/android-support-v4-8189869cdc5776067d69c709ed2d94b058560b57.jar"
         jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/android-support-v4.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="bd6479f5dd592790607e0504e66e0f31c2b4d308"/>
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/classes-287697aa64281d36e123cd153d3ed2b9f0400aab.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="06ca4ea902f14efb76284d918edb085df33cc365"/>
     <item
         dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/codepath-utils-2d6fffc78ac5d3dddbf625a1b59fa6a3ccda7769.jar"
         jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/codepath-utils.jar"

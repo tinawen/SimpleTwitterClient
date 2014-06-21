@@ -2,19 +2,21 @@ package com.codepath.apps.basictwitter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.codepath.apps.basictwitter.models.Tweet;
+import com.codepath.apps.basictwitter.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.json.JSONObject;
 
@@ -38,15 +40,35 @@ public class ComposeTweetActivity extends Activity {
                 etWordCount.setText(String.valueOf(letterRemaining));
             }
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+        client.getMeUser(new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(JSONObject jsonObject) {
+                User meUser = User.getOrCreateUserWithJson(jsonObject);
+                ImageView ivProfileImage = (ImageView) findViewById(R.id.ivProfile);
+                ivProfileImage.setImageResource(Color.TRANSPARENT);
+                ImageLoader imageLoader = ImageLoader.getInstance();
+                imageLoader.displayImage(meUser.getProfileImageUrl(), ivProfileImage);
+                TextView etName = (TextView) findViewById(R.id.tvName);
+                TextView etScreenName = (TextView) findViewById(R.id.tvScreenName);
+                etName.setText(meUser.getName());
+                etScreenName.setText("@" + meUser.getScreenName());
             }
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+            public void onFailure(Throwable throwable, String s) {
+                Log.d("debug", throwable.toString());
+                Log.d("debug", s.toString());
             }
 
+            @Override
+            protected void handleFailureMessage(Throwable t, String s) {
+                Toast.makeText(ComposeTweetActivity.this, "Failure! " + s, Toast.LENGTH_LONG).show();
+                Log.d("debug", "Tweeter sucks " + s);
+            }
         });
-
     }
 
     public void createTweet(View v) {
@@ -74,23 +96,5 @@ public class ComposeTweetActivity extends Activity {
                 Log.d("debug", "Tweeter sucks " + s);
             }
         });
-    }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.compose_tweet, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

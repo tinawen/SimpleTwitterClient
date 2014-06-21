@@ -41,11 +41,7 @@ public class Tweet extends Model implements Serializable {
 		super();
 
 		try {
-            JSONObject userJson = jsonObject.getJSONObject("user");
-            User user = User.getOne(userJson.getLong("id"));
-            if (user == null) {
-                user = new User(userJson);
-            }
+            User user = User.getOrCreateUserWithJson(jsonObject.getJSONObject("user"));
             this.body = jsonObject.getString("text");
             this.tid = jsonObject.getLong("id");
             this.createdAt = jsonObject.getString("created_at");

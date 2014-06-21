@@ -14,18 +14,22 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/etCompose"
         android:hint="What's happening?"
-        android:layout_below="@+id/btnTweet"
+        android:background="#00000000"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/tvScreenName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignRight="@+id/btnTweet"
+        android:layout_alignEnd="@+id/btnTweet" />
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:text="Tweet"
         android:id="@+id/btnTweet"
         android:onClick="createTweet"
+        android:background="@color/twitter_blue_color"
+        android:textColor="@android:color/white"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -34,12 +38,41 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvWordCount"
+        android:textColor="@color/gray_color"
         android:gravity="center"
         android:layout_marginRight="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignBottom="@+id/btnTweet"
         android:layout_toLeftOf="@+id/btnTweet"
         android:text="140" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivProfile"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvName"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignTop="@+id/ivProfile"
+        android:layout_toRightOf="@+id/ivProfile" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvScreenName"
+        android:textSize="14sp"
+        android:textColor="@color/gray_color"
+        android:layout_below="@+id/tvName"
+        android:layout_toRightOf="@+id/ivProfile"
+        android:layout_alignLeft="@+id/tvName" />
 
 </RelativeLayout>
 <!-- From: file:/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_compose_tweet.xml -->

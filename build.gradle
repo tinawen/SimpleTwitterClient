@@ -10,6 +10,10 @@ apply plugin: 'android'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
+    repositories {
+        mavenCentral()
+    }
+    compile 'com.github.chrisbanes.actionbarpulltorefresh:library:+'
 }
 
 android {

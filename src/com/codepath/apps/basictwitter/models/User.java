@@ -72,4 +72,18 @@ public class User extends Model implements Serializable {
     public static List<Tweet> getAllUsers() {
         return new Select().from(User.class).orderBy("uid DESC").execute();
     }
+
+    public static User getOrCreateUserWithJson(JSONObject userJson) {
+        User user = null;
+        try {
+            user = User.getOne(userJson.getLong("id"));
+            if (user == null) {
+                user = new User(userJson);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        
+        return user;
+    }
 }
