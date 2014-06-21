@@ -8,17 +8,17 @@
         revision="19.1.0"
         sha1="e550c03ed8bcfe3b9f97d8c5ce6e8ee305f3beed"/>
     <item
-        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/codepath-oauth-0.3.0-42b529cc7e7a6c0f14134e9c9088f516bb65bee1.jar"
-        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/codepath-oauth-0.3.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="b90f1c3541987f690e2fb854775914cc23266250"/>
-    <item
         dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/universal-image-loader-1.8.4-4f9d006b9fe6f963daa729576d906994813ddc7d.jar"
         jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/universal-image-loader-1.8.4.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="eee81e43531ce82db1781c5a8b27781ca384eede"/>
+    <item
+        dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/codepath-oauth-0.3.0-42b529cc7e7a6c0f14134e9c9088f516bb65bee1.jar"
+        jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/codepath-oauth-0.3.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b90f1c3541987f690e2fb854775914cc23266250"/>
     <item
         dex="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/pre-dexed/debug/android-async-http-1.4.3-b782cd35b3a4fba239259145096f5e97dc2e5d86.jar"
         jar="/Users/tina/Documents/workspace/android/SimpleTwitterClient/libs/android-async-http-1.4.3.jar"

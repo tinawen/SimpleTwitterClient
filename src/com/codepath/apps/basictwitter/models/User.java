@@ -1,31 +1,34 @@
 package com.codepath.apps.basictwitter.models;
 
+import com.activeandroid.Model;
+import com.activeandroid.annotation.Column;
+import com.activeandroid.annotation.Table;
+import com.activeandroid.query.Delete;
+import com.activeandroid.query.Select;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
- * Created by tina on 6/19/14.
+ * Created by tina on 6/20/14.
  */
-public class User {
+@Table(name = "Users")
+public class User extends Model implements Serializable {
+    @Column(name = "uid", unique = true)
+    public long uid;
+    @Column(name = "Name")
     private String name;
-    private long uid;
+    @Column(name = "ScreenName")
     private String screenName;
+    @Column(name = "ProfileImageUrl")
     private String profileImageUrl;
 
-    public static User fromJSON(JSONObject jsonObject) {
-        User user = new User();
-        // Extract values from the json to populate the member variables
-        try {
-            user.name = jsonObject.getString("name");
-            user.uid = jsonObject.getLong("id");
-            user.screenName = jsonObject.getString("screen_name");
-            user.profileImageUrl = jsonObject.getString("profile_image_url");
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-        }
-        return user;
-
+    // Make sure to have a default constructor for every ActiveAndroid model
+    public User(){
+        super();
     }
 
     public String getName() {
@@ -42,5 +45,31 @@ public class User {
 
     public String getProfileImageUrl() {
         return profileImageUrl;
+    }
+
+    // Parse model from JSON
+    public User(JSONObject jsonObject){
+        super();
+
+        try {
+            this.name = jsonObject.getString("name");
+            this.uid = jsonObject.getLong("id");
+            this.screenName = jsonObject.getString("screen_name");
+            this.profileImageUrl = jsonObject.getString("profile_image_url");
+            this.save();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static User getOne(long id) {
+        return new Select().from(User.class).where("uid = ?", id).executeSingle();
+    }
+    public static void deleteAll() {
+        new Delete().from(User.class).execute();
+    }
+
+    public static List<Tweet> getAllUsers() {
+        return new Select().from(User.class).orderBy("uid DESC").execute();
     }
 }

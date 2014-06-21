@@ -64,7 +64,7 @@ public class TimeUtils {
         try {
             Long dateMillis = sf.parse(rawJsonDate).getTime();
             Long nowDateMillis = new Long((new Date()).getTime());
-            dateString = millisToLongDHMS(nowDateMillis - dateMillis);
+            dateString = millisToLongDHMS(Math.max(0, nowDateMillis - dateMillis));
         } catch (ParseException e) {
             e.printStackTrace();
         }

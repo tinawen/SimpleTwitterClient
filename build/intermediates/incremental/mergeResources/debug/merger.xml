@@ -4,9 +4,19 @@
     <dataSet config="main" >
         <source path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res" >
             <file
+                name="ic_action_compose"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/ic_action_compose.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/ic_launcher.png"
                 qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_compose"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-mdpi/ic_action_compose.png"
+                qualifiers="mdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
@@ -14,15 +24,30 @@
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
+                name="ic_action_compose"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xhdpi/ic_action_compose.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xhdpi/ic_launcher.png"
                 qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_compose"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xxhdpi/ic_action_compose.png"
+                qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
                 name="ic_launcher"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xxhdpi/ic_launcher.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
+            <file
+                name="activity_compose_tweet"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_compose_tweet.xml"
+                qualifiers=""
+                type="layout" />
             <file
                 name="activity_login"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_login.xml"
@@ -38,6 +63,11 @@
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/tweet_item.xml"
                 qualifiers=""
                 type="layout" />
+            <file
+                name="compose_tweet"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/menu/compose_tweet.xml"
+                qualifiers=""
+                type="menu" />
             <file
                 name="login"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/menu/login.xml"
@@ -77,6 +107,8 @@
                 <string name="user_name_label" >Name
                 </string>
                 <string name="app_name" >BasicTwitter
+                </string>
+                <string name="title_activity_compose_tweet" >ComposeTweetActivity
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
