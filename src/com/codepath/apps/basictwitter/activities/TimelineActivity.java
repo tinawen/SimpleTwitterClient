@@ -27,7 +27,7 @@ import uk.co.senab.actionbarpulltorefresh.library.listeners.OnRefreshListener;
 
 public class TimelineActivity extends Activity implements
         OnRefreshListener {
-    private TwitterClient client;
+    private com.codepath.apps.basictwitter.TwitterClient client;
     private ArrayList<Tweet> tweets;
     private ArrayAdapter<Tweet> aTweets;
     private ListView lvTweets;
@@ -42,7 +42,7 @@ public class TimelineActivity extends Activity implements
         mPullToRefreshLayout = (PullToRefreshLayout) findViewById(R.id.ptr_layout);
         ActionBarPullToRefresh.from(this).allChildrenArePullable().listener(this).setup(mPullToRefreshLayout);
         lvTweets = (ListView) findViewById(R.id.lvTweets);
-        lvTweets.setOnScrollListener(new EndlessScrollListener() {
+        lvTweets.setOnScrollListener(new com.codepath.apps.basictwitter.EndlessScrollListener() {
             @Override
             public void onLoadMore(int page, int totalItemsCount) {
                 long lastTweetId = tweets.get(totalItemsCount - 1).getTid();
@@ -50,34 +50,20 @@ public class TimelineActivity extends Activity implements
             }
         });
         tweets = new ArrayList<Tweet>();
-        aTweets = new TweetArrayAdapter(this, tweets);
+        aTweets = new com.codepath.apps.basictwitter.TweetArrayAdapter(this, tweets);
         lvTweets.setAdapter(aTweets);
         aTweets.addAll(Tweet.getAllTweets());
         Log.d("debug", "initializing tweets as " + aTweets.getCount());
         Log.d("debug", "all users table responds with " + User.getAllUsers());
 
-        client = TwitterApplication.getRestClient();
+        client = com.codepath.apps.basictwitter.TwitterApplication.getRestClient();
         populateTimeline();
     }
 
     @Override
     public void onRefreshStarted(View view) {
-        new AsyncTask<Void, Void, Void>() {
-
-            @Override
-            protected Void doInBackground(Void... params) {
-                populateTimeline();
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Void result) {
-                super.onPostExecute(result);
-
-                // Notify PullToRefreshLayout that the refresh has finished
-                mPullToRefreshLayout.setRefreshComplete();
-            }
-        }.execute();
+        populateTimeline();
+        mPullToRefreshLayout.setRefreshComplete();
     }
 
     public void populateTimeline() {
@@ -104,8 +90,8 @@ public class TimelineActivity extends Activity implements
                     Log.d("debug", "cleared all on the adapter");
                     Tweet.deleteAll();
                     Log.d("debug", "After clearing all: all tweets are " + Tweet.getAllTweets());
-                    Log.d("debug", "After clearing all: all users are " + User.getAllUsers());
                     User.deleteAll();
+                    Log.d("debug", "After clearing all: all users are " + User.getAllUsers());
                     tweets.clear();
                     aTweets.notifyDataSetChanged();
 
@@ -114,6 +100,8 @@ public class TimelineActivity extends Activity implements
                 Log.d("debug", "total count is " + aTweets.getCount());
                 List tweets = Tweet.getAllTweets();
                 List users = User.getAllUsers();
+                Log.d("debug", "all users are "+ users);
+                Log.d("debug", "all tweets are " + tweets);
                 isLoading = false;
             }
 
@@ -155,7 +143,7 @@ public class TimelineActivity extends Activity implements
 
     private final int REQUEST_CODE = 10;
     private void composeMessage() {
-        Intent intent = new Intent(getApplicationContext(), ComposeTweetActivity.class);
+        Intent intent = new Intent(getApplicationContext(), com.codepath.apps.basictwitter.ComposeTweetActivity.class);
         startActivityForResult(intent, REQUEST_CODE);
     }
 
