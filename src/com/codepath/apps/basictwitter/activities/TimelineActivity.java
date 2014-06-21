@@ -2,7 +2,6 @@ package com.codepath.apps.basictwitter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.codepath.apps.basictwitter.models.Media;
 import com.codepath.apps.basictwitter.models.Tweet;
 import com.codepath.apps.basictwitter.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -53,9 +53,6 @@ public class TimelineActivity extends Activity implements
         aTweets = new com.codepath.apps.basictwitter.TweetArrayAdapter(this, tweets);
         lvTweets.setAdapter(aTweets);
         aTweets.addAll(Tweet.getAllTweets());
-        Log.d("debug", "initializing tweets as " + aTweets.getCount());
-        Log.d("debug", "all users table responds with " + User.getAllUsers());
-
         client = com.codepath.apps.basictwitter.TwitterApplication.getRestClient();
         populateTimeline();
     }
@@ -82,26 +79,16 @@ public class TimelineActivity extends Activity implements
         client.getHomeTimeline(max_id, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONArray jsonArray) {
-                Log.d("debug", "jSON came back");
                 if (reset) {
-                    Log.d("debug", "all users are " + User.getAllUsers());
-                    Log.d("debug", "all tweets are " + Tweet.getAllTweets());
-
-                    Log.d("debug", "cleared all on the adapter");
                     Tweet.deleteAll();
-                    Log.d("debug", "After clearing all: all tweets are " + Tweet.getAllTweets());
                     User.deleteAll();
-                    Log.d("debug", "After clearing all: all users are " + User.getAllUsers());
+                    Media.deleteAll();
                     tweets.clear();
                     aTweets.notifyDataSetChanged();
-
                 }
                 aTweets.addAll(Tweet.fromJSONArray(jsonArray));
-                Log.d("debug", "total count is " + aTweets.getCount());
                 List tweets = Tweet.getAllTweets();
                 List users = User.getAllUsers();
-                Log.d("debug", "all users are "+ users);
-                Log.d("debug", "all tweets are " + tweets);
                 isLoading = false;
             }
 

@@ -565,6 +565,11 @@ false
                 qualifiers=""
                 type="layout" />
             <file
+                name="activity_image_display"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_image_display.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="activity_login"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_login.xml"
                 qualifiers=""
@@ -572,6 +577,11 @@ false
             <file
                 name="activity_timeline"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_timeline.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="image_item"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/image_item.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -610,9 +620,13 @@ false
                 </string>
                 <string name="action_settings" >Settings
                 </string>
+                <string name="title_activity_image_display" >Tweet
+                </string>
                 <string name="user_name_label" >Name
                 </string>
                 <string name="app_name" >BasicTwitter
+                </string>
+                <string name="hello_world" >Hello world!
                 </string>
                 <string name="title_activity_compose_tweet" ></string>
                 <string name="title_activity_photos" >Flickr Photos
@@ -621,6 +635,8 @@ false
             <file
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/values/styles.xml"
                 qualifiers="" >
+                <color name="white" >#FFFFFF
+                </color>
 
                 <style
                     name="AppBaseTheme"
@@ -633,6 +649,8 @@ false
                     -->
                 </style>
 
+                <color name="error_color" >#FF9494
+                </color>
                 <color name="twitter_blue_color" >#4099FF
                 </color>
                 <color name="gray_color" >#A8A8A8
@@ -695,6 +713,11 @@ false
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
+            <file
+                name="border"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/border.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
         </source>
         <source path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/generated/res/rs/debug" />
         <source path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/generated/res/generated/debug" />

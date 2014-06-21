@@ -59,5 +59,17 @@
         android:layout_toRightOf="@+id/tvScreenName"
         android:layout_above="@id/tvBody"/>
 
+    <GridView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gvMedia"
+        android:paddingBottom="15dp"
+        android:layout_below="@+id/tvBody"
+        android:layout_alignLeft="@+id/tvBody"
+        android:layout_alignStart="@+id/tvBody"
+        android:verticalSpacing="8dp"
+        android:horizontalSpacing="8dp">
+    </GridView>
+
 </RelativeLayout>
 <!-- From: file:/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/tweet_item.xml -->

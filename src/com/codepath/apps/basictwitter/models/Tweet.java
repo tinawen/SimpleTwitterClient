@@ -42,10 +42,18 @@ public class Tweet extends Model implements Serializable {
 
 		try {
             User user = User.getOrCreateUserWithJson(jsonObject.getJSONObject("user"));
-            this.body = jsonObject.getString("text");
-            this.tid = jsonObject.getLong("id");
-            this.createdAt = jsonObject.getString("created_at");
             this.user = user;
+            JSONObject entitiesJson = jsonObject.getJSONObject("entities");
+            long tweetId = jsonObject.getLong("id");
+            if (entitiesJson.has("media")) {
+                JSONArray mediaJsonArray = entitiesJson.getJSONArray("media");
+                for (int i = 0; i < mediaJsonArray.length(); i++) {
+                    Media.getOrCreateMediaWithJson(tweetId, mediaJsonArray.getJSONObject(i));
+                }
+            }
+            this.body = jsonObject.getString("text");
+            this.tid = tweetId;
+            this.createdAt = jsonObject.getString("created_at");
             this.save();
 		} catch (JSONException e) {
 			e.printStackTrace();
@@ -85,6 +93,10 @@ public class Tweet extends Model implements Serializable {
 
     public User getUser() {
         return user;
+    }
+
+    public List<String> getMediasForTweetId(long tweetId) {
+        return Media.getMediaUrlsForTweetId(tweetId);
     }
 
     // Record Finders

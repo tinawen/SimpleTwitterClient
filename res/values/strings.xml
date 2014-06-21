@@ -10,5 +10,7 @@
     <string name="user_screen_name_label">Screen Name</string>
     <string name="tweet_body_label">This is the tweet</string>
     <string name="title_activity_compose_tweet"></string>
+    <string name="title_activity_image_display">Tweet</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

@@ -56,6 +56,10 @@
             android:label="@string/title_activity_compose_tweet"
             android:windowSoftInputMode="stateVisible" >
         </activity>
+        <activity
+            android:name="com.codepath.apps.basictwitter.activities.ImageDisplayActivity"
+            android:label="@string/title_activity_image_display" >
+        </activity>
     </application>
 
 </manifest>

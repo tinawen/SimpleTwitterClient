@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.codepath.apps.basictwitter.adapters.ImageArrayAdapter;
 import com.codepath.apps.basictwitter.models.Tweet;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -24,6 +26,7 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
         TextView screenName;
         TextView body;
         TextView timeStamp;
+        GridView images;
     }
 
     public TweetArrayAdapter(Context context, List<Tweet> tweets) {
@@ -44,6 +47,7 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
             viewHolder.screenName = (TextView) convertView.findViewById(R.id.tvScreenName);
             viewHolder.body = (TextView) convertView.findViewById(R.id.tvBody);
             viewHolder.timeStamp = (TextView) convertView.findViewById(R.id.tvTimeStamp);
+            viewHolder.images = (GridView) convertView.findViewById(R.id.gvMedia);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -55,7 +59,19 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
         viewHolder.username.setText(tweet.getUser().getName());
         viewHolder.screenName.setText("@" + tweet.getUser().getScreenName());
         viewHolder.body.setText(tweet.getBody());
-        viewHolder.timeStamp.setText(TimeUtils.getRelativeTimeAgo(tweet.getCreatedAt()));
+        viewHolder.timeStamp.setText(com.codepath.apps.basictwitter.TimeUtils.getRelativeTimeAgo(tweet.getCreatedAt()));
+        List<String> medias = tweet.getMediasForTweetId(tweet.tid);
+
+        ArrayAdapter<String> imageUrls = new ImageArrayAdapter(getContext(), medias);
+        viewHolder.images.setAdapter(imageUrls);
+        // dynamically layout based on the number of images we have
+        if (imageUrls.getCount() == 1) {
+            viewHolder.images.setNumColumns(1);
+        } else if (imageUrls.getCount() == 2) {
+            viewHolder.images.setNumColumns(2);
+        } else {
+            viewHolder.images.setNumColumns(3);
+        }
         return convertView;
     }
  }

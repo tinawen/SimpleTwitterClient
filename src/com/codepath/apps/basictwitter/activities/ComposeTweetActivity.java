@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.AndroidCharacter;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -21,7 +22,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import org.json.JSONObject;
 
 public class ComposeTweetActivity extends Activity {
-    private TwitterClient client;
+    private com.codepath.apps.basictwitter.TwitterClient client;
     private static final int TWITTER_LETTER_COUNT_LIMIT = 140;
     EditText etCompose;
 
@@ -29,7 +30,7 @@ public class ComposeTweetActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose_tweet);
-        client = TwitterApplication.getRestClient();
+        client = com.codepath.apps.basictwitter.TwitterApplication.getRestClient();
         etCompose = (EditText) findViewById(R.id.etCompose);
         etCompose.addTextChangedListener(new TextWatcher() {
             @Override
@@ -38,6 +39,11 @@ public class ComposeTweetActivity extends Activity {
                 int letterRemaining = TWITTER_LETTER_COUNT_LIMIT - letterCount;
                 TextView etWordCount = (TextView) findViewById(R.id.tvWordCount);
                 etWordCount.setText(String.valueOf(letterRemaining));
+                if (letterRemaining >= 0) {
+                    etWordCount.setTextColor(getResources().getColor(R.color.gray_color));
+                } else {
+                    etWordCount.setTextColor(getResources().getColor(R.color.error_color));
+                }
             }
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -66,7 +72,7 @@ public class ComposeTweetActivity extends Activity {
             @Override
             protected void handleFailureMessage(Throwable t, String s) {
                 Toast.makeText(ComposeTweetActivity.this, "Failure! " + s, Toast.LENGTH_LONG).show();
-                Log.d("debug", "Tweeter sucks " + s);
+                Log.d("debug", "Tweeter possibly rate limited us " + s);
             }
         });
     }
@@ -76,7 +82,6 @@ public class ComposeTweetActivity extends Activity {
         client.tweet(etCompose.getText().toString(), new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONObject jsonObject) {
-                Toast.makeText(ComposeTweetActivity.this, "tweeting is successful", Toast.LENGTH_SHORT).show();
                 Tweet newTweet = new Tweet(jsonObject);
                 Intent data = new Intent();
                 data.putExtra("newTweet", newTweet);
@@ -93,7 +98,7 @@ public class ComposeTweetActivity extends Activity {
             @Override
             protected void handleFailureMessage(Throwable t, String s) {
                 Toast.makeText(ComposeTweetActivity.this, "Failure! " + s, Toast.LENGTH_LONG).show();
-                Log.d("debug", "Tweeter sucks " + s);
+                Log.d("debug", "Tweeter possibly rate limited us " + s);
             }
         });
     }

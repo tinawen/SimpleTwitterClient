@@ -30,7 +30,7 @@ public final class R {
 		public static final int spb_default_reversed = 0x7f040002;
 	}
 	public static final class color {
-		public static final int spb_default_color = 0x7f050002;
+		public static final int spb_default_color = 0x7f050003;
 	}
 	public static final class dimen {
 		public static final int spb_default_stroke_separator_length = 0x7f070003;
@@ -47,7 +47,7 @@ public final class R {
 		public static final int spb_default_sections_count = 0x7f080001;
 	}
 	public static final class string {
-		public static final int spb_default_speed = 0x7f090006;
+		public static final int spb_default_speed = 0x7f090007;
 	}
 	public static final class style {
 		public static final int SmoothProgressBar = 0x7f0a0004;
