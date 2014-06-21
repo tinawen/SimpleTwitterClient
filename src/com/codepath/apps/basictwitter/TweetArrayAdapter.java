@@ -55,7 +55,7 @@ public class TweetArrayAdapter extends ArrayAdapter<Tweet> {
         viewHolder.username.setText(tweet.getUser().getName());
         viewHolder.screenName.setText("@" + tweet.getUser().getScreenName());
         viewHolder.body.setText(tweet.getBody());
-        viewHolder.timeStamp.setText(tweet.getCreatedAt());
+        viewHolder.timeStamp.setText(TimeUtils.getRelativeTimeAgo(tweet.getCreatedAt()));
         return convertView;
     }
  }

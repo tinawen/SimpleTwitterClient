@@ -29,6 +29,16 @@
                 qualifiers=""
                 type="layout" />
             <file
+                name="activity_timeline"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_timeline.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="tweet_item"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/tweet_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
                 name="login"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/menu/login.xml"
                 qualifiers=""
@@ -36,6 +46,11 @@
             <file
                 name="photos"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/menu/photos.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="timeline"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/menu/timeline.xml"
                 qualifiers=""
                 type="menu" />
             <file
@@ -49,13 +64,13 @@
             <file
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/values/strings.xml"
                 qualifiers="" >
-                <string name="login_label" >Connect to Twitter
-                </string>
                 <string name="title_activity_timeline" >TimelineActivity
                 </string>
-                <string name="user_screen_name_label" >Screen Name
+                <string name="login_label" >Connect to Twitter
                 </string>
                 <string name="tweet_body_label" >This is the tweet
+                </string>
+                <string name="user_screen_name_label" >Screen Name
                 </string>
                 <string name="action_settings" >Settings
                 </string>
@@ -127,21 +142,6 @@
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
-            <file
-                name="activity_timeline"
-                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_timeline.xml"
-                qualifiers=""
-                type="layout" />
-            <file
-                name="timeline"
-                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/menu/timeline.xml"
-                qualifiers=""
-                type="menu" />
-            <file
-                name="tweet_item"
-                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/tweet_item.xml"
-                qualifiers=""
-                type="layout" />
         </source>
         <source path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/generated/res/rs/debug" />
         <source path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/generated/res/generated/debug" />

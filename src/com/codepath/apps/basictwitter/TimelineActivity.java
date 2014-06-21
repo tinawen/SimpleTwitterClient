@@ -25,6 +25,7 @@ public class TimelineActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+        Log.d("debug", "timeline activity being loaded");
         client = TwitterApplication.getRestClient();
         populateTimeline(Long.MAX_VALUE);
         lvTweets = (ListView) findViewById(R.id.lvTweets);
@@ -41,11 +42,13 @@ public class TimelineActivity extends Activity {
     }
 
     public void populateTimeline(long max_id) {
+        Log.d("debug", "populateTimeline");
         client.getHomeTimeline(max_id, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(JSONArray jsonArray) {
                 Log.d("debug", "jSON came back");
                 aTweets.addAll(Tweet.fromJSONArray(jsonArray));
+                Log.d("debug", "total count is " + aTweets.getCount());
             }
 
             @Override
