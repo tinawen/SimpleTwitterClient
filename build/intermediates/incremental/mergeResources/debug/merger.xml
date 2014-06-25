@@ -250,13 +250,12 @@ false
                         format="reference" />
                 </declare-styleable>
 
-                <string name="pull_to_refresh_pull_label" >Pull to refresh…
-                </string>
-
                 <item
                     name="ptr_progress"
                     type="id"/>
 
+                <string name="pull_to_refresh_pull_label" >Pull to refresh…
+                </string>
                 <string name="pull_to_refresh_release_label" >Release to refresh…
                 </string>
 
@@ -278,19 +277,19 @@ false
                     name="ptr_content"
                     type="id"/>
 
-                <dimen name="ptr_progress_bar_stroke_width" >4dp
-                </dimen>
-
                 <attr
                     name="ptrHeaderStyle"
                     format="reference" />
+
+                <dimen name="ptr_progress_bar_stroke_width" >4dp
+                </dimen>
             </file>
             <file
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values-ar/values.xml"
                 qualifiers="ar" >
-                <string name="pull_to_refresh_release_label" >اترك للتحديث…
-                </string>
                 <string name="pull_to_refresh_pull_label" >اسحب للتحديث…
+                </string>
+                <string name="pull_to_refresh_release_label" >اترك للتحديث…
                 </string>
                 <string name="pull_to_refresh_refreshing_label" >تحميل…
                 </string>
@@ -320,9 +319,9 @@ false
                 qualifiers="el" >
                 <string name="pull_to_refresh_release_label" >Αφήστε για ανανέωση…
                 </string>
-                <string name="pull_to_refresh_refreshing_label" >Φόρτωση…
-                </string>
                 <string name="pull_to_refresh_pull_label" >Σύρετε προς τα κάτω για ανανέωση…
+                </string>
+                <string name="pull_to_refresh_refreshing_label" >Φόρτωση…
                 </string>
             </file>
             <file
@@ -408,9 +407,9 @@ false
             <file
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/intermediates/exploded-aar/com.github.chrisbanes.actionbarpulltorefresh/library/0.9.9/res/values-lt/values.xml"
                 qualifiers="lt" >
-                <string name="pull_to_refresh_release_label" >Paleiskite, kad atnaujinti…
-                </string>
                 <string name="pull_to_refresh_refreshing_label" >Kraunama…
+                </string>
+                <string name="pull_to_refresh_release_label" >Paleiskite, kad atnaujinti…
                 </string>
                 <string name="pull_to_refresh_pull_label" >Traukite, kad atnaujinti…
                 </string>
@@ -500,9 +499,9 @@ false
                 qualifiers="tr" >
                 <string name="pull_to_refresh_release_label" >Yenilemek için bırakın…
                 </string>
-                <string name="pull_to_refresh_refreshing_label" >Yükleniyor…
-                </string>
                 <string name="pull_to_refresh_pull_label" >Yenilemek için kaydırın…
+                </string>
+                <string name="pull_to_refresh_refreshing_label" >Yükleniyor…
                 </string>
             </file>
             <file
@@ -520,8 +519,23 @@ false
     <dataSet config="main" >
         <source path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res" >
             <file
+                name="border"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/border.xml"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_action_compose"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/ic_action_compose.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_home"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/ic_action_home.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_mentions"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/ic_action_mentions.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
@@ -530,8 +544,23 @@ false
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
+                name="ic_profile"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/ic_profile.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_action_compose"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-mdpi/ic_action_compose.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_home"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-mdpi/ic_action_home.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_mentions"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-mdpi/ic_action_mentions.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
@@ -540,8 +569,23 @@ false
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
+                name="ic_profile"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-mdpi/ic_profile.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_action_compose"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xhdpi/ic_action_compose.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_home"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xhdpi/ic_action_home.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_mentions"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xhdpi/ic_action_mentions.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
@@ -550,13 +594,33 @@ false
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
+                name="ic_profile"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xhdpi/ic_profile.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_action_compose"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xxhdpi/ic_action_compose.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
+                name="ic_action_home"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xxhdpi/ic_action_home.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_action_mentions"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xxhdpi/ic_action_mentions.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xxhdpi/ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_profile"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-xxhdpi/ic_profile.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
@@ -577,6 +641,11 @@ false
             <file
                 name="activity_timeline"
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_timeline.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragment_tweets_list"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/fragment_tweets_list.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -610,27 +679,43 @@ false
             <file
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/values/strings.xml"
                 qualifiers="" >
-                <string name="title_activity_timeline" >Home
-                </string>
                 <string name="login_label" >Connect to Twitter
                 </string>
-                <string name="tweet_body_label" >This is the tweet
-                </string>
-                <string name="user_screen_name_label" >Screen Name
+                <string name="profile_name" >Name
                 </string>
                 <string name="action_settings" >Settings
                 </string>
+                <string name="user_screen_name_label" >Screen Name
+                </string>
+                <string name="hello_blank_fragment" >Hello blank fragment
+                </string>
+                <string name="tab_home" >Home
+                </string>
+                <string name="title_activity_photos" >Flickr Photos
+                </string>
+                <string name="profile_following" >5 Following
+                </string>
+                <string name="profile_tagline" >Tagline
+                </string>
+                <string name="title_activity_timeline" >Home
+                </string>
+                <string name="profile_followers" >5 Followers
+                </string>
+                <string name="tweet_body_label" >This is the tweet
+                </string>
                 <string name="title_activity_image_display" >Tweet
+                </string>
+                <string name="title_activity_edit_profile" >editProfileActivity
                 </string>
                 <string name="user_name_label" >Name
                 </string>
-                <string name="app_name" >BasicTwitter
+                <string name="app_name" >PandaTweet
+                </string>
+                <string name="tab_mentions" >Mentions
                 </string>
                 <string name="hello_world" >Hello world!
                 </string>
                 <string name="title_activity_compose_tweet" ></string>
-                <string name="title_activity_photos" >Flickr Photos
-                </string>
             </file>
             <file
                 path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/values/styles.xml"
@@ -651,17 +736,16 @@ false
 
                 <color name="error_color" >#FF9494
                 </color>
-                <color name="twitter_blue_color" >#4099FF
-                </color>
                 <color name="gray_color" >#A8A8A8
+                </color>
+                <color name="twitter_blue_color" >#4099FF
                 </color>
 
                 <style
-                    name="MyActionBar"
-                    parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse" >
-                    <item name="android:background">
-@color/twitter_blue_color
-                    </item>
+                    name="AppTheme"
+                    parent="AppBaseTheme" >
+
+                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
                 </style>
 
                 <style
@@ -673,10 +757,11 @@ false
                 </style>
 
                 <style
-                    name="AppTheme"
-                    parent="AppBaseTheme" >
-
-                    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+                    name="MyActionBar"
+                    parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse" >
+                    <item name="android:background">
+@color/twitter_blue_color
+                    </item>
                 </style>
             </file>
             <file
@@ -714,10 +799,10 @@ false
                 </dimen>
             </file>
             <file
-                name="border"
-                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/drawable-hdpi/border.xml"
-                qualifiers="hdpi-v4"
-                type="drawable" />
+                name="activity_profile"
+                path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/layout/activity_profile.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/generated/res/rs/debug" />
         <source path="/Users/tina/Documents/workspace/android/SimpleTwitterClient/build/generated/res/generated/debug" />

@@ -1,11 +1,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.codepath.apps.basictwitter.TimelineActivity" >
+    tools:context="com.basictwitter.apps.basictwitter.activities.TimelineActivity" >
     <item
         android:id="@+id/miCompose"
         android:icon="@drawable/ic_action_compose"
         android:showAsAction="always"
         android:title="Compose">
+    </item>
+    <item
+        android:id="@+id/miProfile"
+        android:icon="@drawable/ic_profile"
+        android:showAsAction="always"
+        android:title="Profile">
     </item>
 </menu>
 <!-- From: file:/Users/tina/Documents/workspace/android/SimpleTwitterClient/res/menu/timeline.xml -->
