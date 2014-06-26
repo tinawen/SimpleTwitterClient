@@ -1,6 +1,6 @@
-# Simple Twitter Client
+# Simple Twitter Client - fragments
 
-This is a simple Twitter client. The home screen shows the user's home timeline, in reverse chronological order. Inifinite scrolling is supported so it's easy to see older tweets. Links and images within each tweet are clickable so users can see more details. Composing tweets is supported with character count.
+This is a simple Twitter client with fragments. The home screen shows the user's home timeline, in reverse chronological order. Inifinite scrolling is supported so it's easy to see older tweets. Links and images within each tweet are clickable so users can see more details. Composing tweets is supported with character count. In profile screen you can see details about the user.
 
 Time spent: 10 hours spent in total
 
@@ -17,10 +17,17 @@ Completed user stories:
 		      User can then enter a new tweet and post this to twitter
 		      User is taken back to home timeline with new tweet visible in timeline
  		      [x] Optional: User can see a counter with total number of characters left for tweet
- * [x] Advanced: User can refresh tweets timeline by pulling down to refresh (i.e pull-to-refresh)
- * [x] Advanced: User can open the twitter app offline and see last loaded tweets: Tweets are persisted into sqlite and can be displayed from the local DB
- * [x] Advanced: Improve the user interface and theme the app to feel "twitter branded"
- * [x] Bonus: User can see embedded image media within the tweet detail view (not from tweet detail view)
+ * [x] Required: User can switch between Timeline and Mention views using tabs
+       		      User can view their home timeline tweets
+		      User can view the recent mentions of their username
+		      User can scroll to bottom of either of these lists and new tweets will load ("infinite scroll")
+ * [x] Required: User can navigate to view their own profile
+       		      User can see picture, tagline, # of followers, # of following, and tweets on their profile
+ * [x] Required: User can click on the profile image in any tweet to see another user's profile
+       		      User can see picture, tagline, # of followers, # of following, and tweets of clicked user
+		      Profile view should include that user's timeline
+ * [x] Advanced: When a network request is sent, user sees an indeterminate progress indicator
+ * [x] Advanced: Improve the user interface and theme the app to feel twitter branded
  
 Notes:
 
@@ -30,4 +37,4 @@ Notes:
 
 Walkthrough of all user stories:
 
-![Video Walkthrough](anim_twitter_client.gif)
+![Video Walkthrough](anim_twitter_client_2.gif)
